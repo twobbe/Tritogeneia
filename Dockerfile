@@ -68,7 +68,7 @@
          && rsync -az /var/www/html/ /datastoresetup/var-www-html/
         ENV DEBIAN_FRONTEND interactive
     WORKDIR /
-     EXPOSE 80 443 3306 5121 6121 6900
+     EXPOSE 80 443 3306 5121 6121 6900 22
      VOLUME /datastore/
      VOLUME /etc/apache2/
      VOLUME /atc/mysql/
@@ -80,4 +80,4 @@
         CMD bash
  ENTRYPOINT /boottime.sh
 
-# docker run -it -p 20000:80 -p 20001:443 -p 20002:3306 -p 20003:5121 -p 20004:6121 -p 20005:6900 -v ~/Desktop/datastore/:/datastore/ -v ~/Desktop/datastore/etc-apache2/:/datastore/etc/apache2/ -v ~/Desktop/datastore/etc-mysql/:/datastore/etc/mysql/ -v ~/Desktop/datastore/usr-bin-rathena/:/datastore/usr/bin/rathena/ -v ~/Desktop/datastore/var-lib-mysql/:/datastore/var/lib/mysql/ --name Aegis georgegeorgulasiv/tritogeneia
+# docker run -it -p 20022:22 -p 20000:80 -p 20001:443 -p 20002:3306 -p 20003:5121 -p 20004:6121 -p 20005:6900 -v ~/Desktop/datastore/:/datastore/ -v ~/Desktop/datastore/etc-apache2/:/datastore/etc/apache2/ -v ~/Desktop/datastore/etc-mysql/:/datastore/etc/mysql/ -v ~/Desktop/datastore/usr-bin-rathena/:/datastore/usr/bin/rathena/ -v ~/Desktop/datastore/var-lib-mysql/:/datastore/var/lib/mysql/ --name Aegis georgegeorgulasiv/tritogeneia
